@@ -50,20 +50,28 @@ namespace Calculator
             Button button = (Button)sender;
             string operatorSymbol = button.Content.ToString();
 
+            if (operatorSymbol == "-" && string.IsNullOrEmpty(currentInput) && firstOperand == null)
+            {
+                currentInput = "-";
+                numbersTbl.Text = currentInput;
+                return; 
+            }
+
+            
             if (!string.IsNullOrEmpty(currentInput))
             {
                 firstOperand = double.Parse(currentInput);
                 operation = operatorSymbol[0];
                 currentInput = "";
-                numbersTbl.Text = ""; 
+                numbersTbl.Text = "";
             }
+            
             else if (firstOperand.HasValue)
             {
-
                 operation = operatorSymbol[0];
             }
         }
-        
+
 
         private void Equally_Click(object sender, RoutedEventArgs e)
         {

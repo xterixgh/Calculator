@@ -143,7 +143,7 @@
             Click="One_Click"
             Content="0"
             Foreground="#00FFFF" />
-        <Button
+       <Button
             x:Name="Minus"
             Grid.Row="4"
             Grid.Column="2"
